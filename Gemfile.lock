@@ -84,6 +84,8 @@ GEM
     tilt (2.0.8)
     travis-config (1.0.13)
       hashr (~> 2.0.0)
+    travis-metrics (2.0.0)
+      metriks-librato_metrics (~> 1.0)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
     unicorn (4.6.3)
@@ -103,8 +105,6 @@ DEPENDENCIES
   activesupport (~> 4.1.11)
   backports (= 2.4.0)
   foreman (~> 0.41.0)
-  metriks
-  metriks-librato_metrics
   multi_json
   pry
   rack-test
@@ -115,6 +115,7 @@ DEPENDENCIES
   sidekiq (~> 4.0.0)
   sinatra (~> 1.4.2)
   travis-config (~> 1.0.0)
+  travis-metrics
   travis-support!
   unicorn (~> 4.6.2)
   webmock

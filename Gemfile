@@ -4,6 +4,7 @@ ruby '2.3.7'
 
 gem 'travis-support',  git: 'https://github.com/travis-ci/travis-support'
 gem 'travis-config',  '~> 1.0.0'
+gem 'travis-metrics'
 
 gem 'sidekiq',         '~> 4.0.0'
 gem 'redis-namespace'
@@ -15,9 +16,6 @@ gem 'multi_json'
 gem 'sentry-raven'
 
 gem 'activesupport',   '~> 4.1.11'
-
-gem 'metriks'
-gem 'metriks-librato_metrics'
 
 # backports 2.5.0 breaks rails routes
 gem 'backports',       '2.4.0'

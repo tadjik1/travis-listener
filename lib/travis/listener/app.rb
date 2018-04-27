@@ -158,7 +158,7 @@ module Travis
       def data
         {
           :type         => event_type,
-          :payload      => Oj.dump(decoded_payload),
+          :payload      => payload,
           :uuid         => uuid,
           :github_guid  => delivery_guid,
           :github_event => event_type,
@@ -220,7 +220,7 @@ module Travis
       def request_body
         @_request_body ||= begin
           request.body.rewind
-          request.body.read
+          request.body.read.force_encoding("utf-8")
         end
       end
 

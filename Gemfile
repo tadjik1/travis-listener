@@ -6,7 +6,7 @@ gem 'travis-support',  git: 'https://github.com/travis-ci/travis-support'
 gem 'travis-config',  '~> 1.0.0'
 gem 'travis-metrics'
 
-gem 'sidekiq',         '~> 4.0.0'
+gem 'sidekiq',         '~> 5.1.3'
 gem 'redis-namespace'
 
 gem 'sinatra',         '~> 2.0.1'
@@ -24,7 +24,7 @@ gem 'backports',       '2.4.0'
 gem 'yajl-ruby',       '~> 1.3.1'
 
 # heroku
-gem 'unicorn',         '~> 4.6.2'
+gem 'unicorn',         '~> 5.4.0'
 
 group :development, :test do
   gem 'pry'

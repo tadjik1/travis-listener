@@ -8,7 +8,7 @@ before_fork do |server, worker|
 end
 
 after_fork do |server, worker|
-  if reporter = Travis::Metrics.reporter
+  if reporter = Travis::Listener.metrics_reporter
     reporter.stop
     reporter.start
   end

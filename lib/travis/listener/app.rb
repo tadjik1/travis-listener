@@ -49,7 +49,7 @@ module Travis
 
             204
           else
-            Listener.metrics.meter('listener.request.no_payload').mark
+            Listener.metrics.meter('listener.request.no_payload')
 
             422
           end
@@ -70,9 +70,9 @@ module Travis
 
       def report_ip_validity
         if valid_ip?
-          Listener.metrics.meter('listener.ip.valid').mark
+          Listener.metrics.meter('listener.ip.valid')
         else
-          Listener.metrics.meter('listener.ip.invalid').mark
+          Listener.metrics.meter('listener.ip.invalid')
           logger.info "Payload to travis-listener sent from an invalid IP(#{request.ip})"
         end
       end
@@ -124,7 +124,7 @@ module Travis
           repository:    slug
         )
 
-        Listener.metrics.meter("listener.event.webhook_#{event_type}").mark
+        Listener.metrics.meter("listener.event.webhook_#{event_type}")
 
         Travis::Sidekiq::Gatekeeper.push(Travis.config.gator.queue, data)
       end

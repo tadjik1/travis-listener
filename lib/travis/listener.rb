@@ -29,6 +29,8 @@ module Travis
     end
 
     class << self
+      attr_reader :metrics
+
       def setup
         if Travis.config.sentry.dsn
           require 'raven'
@@ -39,11 +41,7 @@ module Travis
         end
 
         # setup metrics early
-        metrics
-      end
-
-      def metrics
-        @metrics ||= begin
+        @metrics = begin
           if ENV['RACK_ENV'] == "production"
             logger = ::Logger.new(STDOUT)
             Travis::Metrics.setup(Travis.config.metrics, logger)

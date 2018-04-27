@@ -21,6 +21,11 @@ module Travis
               sync:             { queue: ENV.fetch('SIDEKIQ_SYNC_QUEUE', 'sync.gh_apps') },
               sentry:           { },
               metrics:          { reporter: 'librato' }
+
+      def metrics
+        # TODO fix keychain?
+        super.to_h.merge(librato: librato.to_h.merge(source: librato_source), graphite: graphite)
+      end
     end
 
     class << self
@@ -33,10 +38,8 @@ module Travis
           end
         end
 
-        if ENV['RACK_ENV'] == "production"
-          logger = ::Logger.new(STDOUT)
-          Travis::Metrics.setup(Travis.config.metrics, logger)
-        end
+        # setup metrics early
+        metrics
       end
 
       def metrics

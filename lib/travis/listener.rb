@@ -39,8 +39,8 @@ module Travis
         end
       end
 
-      def metrics_reporter
-        @metrics_reporter ||= begin
+      def metrics
+        @metrics ||= begin
           if ENV['RACK_ENV'] == "production"
             logger = ::Logger.new(STDOUT)
             Travis::Metrics.setup(Travis.config.metrics, logger)

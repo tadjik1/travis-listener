@@ -24,7 +24,9 @@ gem 'backports',       '2.4.0'
 gem 'yajl-ruby',       '~> 1.3.1'
 
 # heroku
-gem 'unicorn',         '~> 5.4.0'
+# gem 'unicorn',         '~> 5.4.0'
+
+gem 'puma'
 
 group :development, :test do
   gem 'pry'

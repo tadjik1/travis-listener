@@ -2,9 +2,8 @@ require 'sinatra'
 require 'travis/support/logging'
 require 'sidekiq'
 require 'travis/sidekiq'
-require 'multi_json'
+require 'oj'
 require 'ipaddr'
-require 'metriks'
 
 module Travis
   module Listener
@@ -242,7 +241,7 @@ module Travis
       end
 
       def decoded_payload
-        @decoded_payload ||= MultiJson.load(payload)
+        @decoded_payload ||= Oj.load(payload)
       end
     end
   end

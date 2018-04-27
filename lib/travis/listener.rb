@@ -33,7 +33,10 @@ module Travis
           end
         end
 
-        Travis::Metrics.setup if ENV['RACK_ENV'] == "production"
+        if ENV['RACK_ENV'] == "production"
+          logger = ::Logger.new(STDOUT)
+          Travis::Metrics.setup(Travis.config.metrics, logger)
+        end
       end
 
       def disconnect

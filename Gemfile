@@ -6,6 +6,8 @@ gem 'travis-support',  git: 'https://github.com/travis-ci/travis-support'
 gem 'travis-config',   '~> 1.0.0'
 gem 'travis-metrics',  git: 'https://github.com/travis-ci/travis-metrics'
 
+gem 'metriks',         git: 'https://github.com/travis-ci/metriks'
+
 gem 'sidekiq',         '~> 5.1.3'
 gem 'redis-namespace'
 

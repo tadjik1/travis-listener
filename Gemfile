@@ -9,7 +9,7 @@ gem 'travis-metrics'
 gem 'sidekiq',         '~> 4.0.0'
 gem 'redis-namespace'
 
-gem 'sinatra',         '~> 1.4.2'
+gem 'sinatra',         '~> 2.0.1'
 gem 'rake',            '~> 0.9.2.2'
 gem 'multi_json'
 

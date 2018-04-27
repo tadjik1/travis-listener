@@ -1,5 +1,6 @@
 require 'travis/config'
 require 'travis/support'
+require 'travis/metrics'
 require 'travis/listener/app'
 require 'logger'
 

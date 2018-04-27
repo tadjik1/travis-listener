@@ -158,7 +158,7 @@ module Travis
       def data
         {
           :type         => event_type,
-          :payload      => payload,
+          :payload      => Oj.dump(decoded_payload),
           :uuid         => uuid,
           :github_guid  => delivery_guid,
           :github_event => event_type,

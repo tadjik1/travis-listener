@@ -1,2 +1,2 @@
-web: bundle exec puma -t 8:32 -b tcp://127.0.0.1:$PORT
+web: bundle exec puma -t ${RUBY_MAX_THREADS:-16}:${RUBY_MAX_THREADS:-16} -p ${PORT:-3000} -e ${RACK_ENV:-development}
 console: bundle exec irb -I lib -r travis/listener

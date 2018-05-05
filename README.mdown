@@ -5,7 +5,7 @@
 
 Travis Listener is a small Sinatra app which receives service hook notifications from Legacy Services Integrations and GitHub Apps on GitHub, and queues them for processing by Gatekeeper or GitHub Sync (both private repositories) using [Sidekiq](http://sidekiq.org).
 
-Although the Travis service hook listens for several different events when activated for a repository, currently Travis Listener only processes `push` and `pull_request` events and discards the rest.
+Travis CI listens for several service hook events, including `push`, `pull_request`, `repository`, `installation`, and others. Events not recognized will be discarded.
 
 This is the first point of entry for build events from GitHub, and over time support for responding to user sync related events is planned.
 

@@ -21,8 +21,6 @@ gem 'metriks-librato_metrics'
 
 gem 'yajl-ruby',       '~> 1.4.0'
 
-gem 'jemalloc',        git: 'https://github.com/joshk/jemalloc-rb'
-
 group :development, :test do
   gem 'pry'
   gem 'rspec',         '~> 2.9'
